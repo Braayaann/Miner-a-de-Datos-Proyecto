@@ -5,3 +5,4 @@ tmp/
 datos/originales/*
 !datos/originales/catalogo_geografico_dpa_2023.csv
 /resultados/egresos_*/
+/datos/procesados/regresion/

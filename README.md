@@ -62,3 +62,9 @@ El repositorio incluye el notebook, las dependencias, la documentación, el cat�
 `AGENTS.md` reúne las reglas de programación del proyecto y `.agents/skills/kill-slop/` contiene la skill compartida para mantener el código sencillo y legible. Se incluyen en Git para que los integrantes trabajen con las mismas instrucciones.
 
 Estas instrucciones no afectan la ejecución de Python. Codex puede descubrirlas en la carpeta del repositorio; otras herramientas pueden requerir configuración propia. Al solicitar cambios a un asistente, indicar que respete `AGENTS.md` y utilice `$kill-slop`.
+
+## Preparación específica para regresión
+
+[03_regresion.ipynb](03_regresion.ipynb) parte del Parquet común y prepara ocho características y `DIAS_ESTADA`, sin entrenar modelos. Separa 2023 para entrenamiento, 2024 para validación y 2025 para prueba final. El codificador se ajusta solo con 2023.
+
+Ejecutar desde la raíz con `.venv`. Guarda en `datos/procesados/regresion/` tres archivos comprimidos `.joblib`, uno por partición, con `X` dispersa, `y` e identificadores alineados, y `preprocesador_2023.joblib` con el codificador y los controles. Estos resultados locales se excluyen de Git; no se modifica la base común. El notebook explica categorías desconocidas, conservación de extremos y alcance retrospectivo del diagnóstico de egreso.
